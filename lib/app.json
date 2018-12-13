@@ -1,4 +1,35 @@
 {
   "app_id": "bitrix24",
-  "name": "Bitrix24"
+  "name": "Bitrix24",
+  "description": {
+    "pt_BR": "Sua empresa unida",
+    "en": "Your company United"
+  },
+  "website": "https://www.bitrix24.com.br/",
+  "signup_url": "https://www.bitrix24.com.br/",
+  "api_base_uri": {
+    "production": {
+      "uri": "*",
+      "label": "Produção",
+      "default": true
+    }
+  },
+  "authentication": {
+    "type": "pass_through_url",
+    "fields": [
+      {
+        "name": "auth",
+        "label": "Webhook de Entrada do Bitrix24",
+        "mapping": "Authorization",
+        "prefix": "url",
+        "type": "text",
+        "validations": [
+          {
+            "name": "min_length",
+            "value": 10
+          }
+        ]
+      }
+    ]
+  }
 }
